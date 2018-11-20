@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+  <!-- Powered by Terminus.io -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.2">
+    <meta name="baidu-site-verification" content="H4CfHlHHeo" />
+    <meta property="og:type" content="政采云"/>
+    <meta property="og:image" content="http://zcyimg.dithub.com/logo-og.jpg"/>
+    <meta property="og:description" content="{{seo.description}}" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_585697_iuqp4lze8060f6r.css">
+    <link rel="stylesheet" href="/public/assets/styles/vendor.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/styles/app.css">
+
+  </head>
+  <body>
+    <div class="root-container">
+    <div class="ZCY-eevee-page-main js-comp">
+      <div class="hide">{{json this}}</div>
+      {{#each this._DATA_}}
+        <div class="{{#equals this.type 'col'}}eevee-clu-line{{else}}eevee-col-box{{/equals}} eevee-grids" style="{{this.css}}">
+          {{#each this.comps}}
+            <div class="eevee-line-row-box" style="{{this.css}}">
+              {{#each this.insert}}
+                <div class="eevee-line-row" data-compath="{{this.path}}">
+                  <div class="eevee-row-ele" style="{{this.css}}">
+                    {{inject this.path _DATA_=this.data}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+
+          {{/each}}
+        </div>
+      {{/each}}
+      </div>
+    </div>
+    <script src="/public/assets/scripts/vendor.js"></script>
+    <script src="/public/assets/scripts/templates.js"></script>
+    <script src="/public/assets/scripts/app.js"></script>
+  </body>
+</html>
